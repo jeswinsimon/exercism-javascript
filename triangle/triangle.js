@@ -1,11 +1,10 @@
 const isValidTriangle = (sides) => {
-    if (![...sides].every(side => side > 0)) {
+
+    if (sides[0] <= 0) {
         return false;
     }
 
-    let largest = sides.splice(sides.indexOf(Math.max(...sides)), 1);
-
-    if ((sides[0] + sides[1]) < largest) {
+    if ((sides[0] + sides[1]) < sides[2]) {
         return false;
     }
 
@@ -15,7 +14,7 @@ const isValidTriangle = (sides) => {
 export default class Triangle {
 
     constructor(a, b, c) {
-        this.sides = [a, b, c];
+        this.sides = [a, b, c].sort((a,b) => a - b );
     }
 
     kind() {

@@ -3,7 +3,7 @@ const arrayTranspose = (data) => {
     return dT;
 }
 
-export default class Matrix {
+export class Matrix {
     constructor(m){
         this.rows = m.split('\n').map(d => d.split(' ').map(Number));
         this.columns = arrayTranspose(this.rows);

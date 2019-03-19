@@ -1,6 +1,5 @@
 const arrayTranspose = (data) => {
-    let dT = data.map((r, row) => data.map((d, col) => data[col][row]));
-    return dT;
+    return data.map((r, row) => data.map((d, col) => data[col][row]));
 }
 
 export class Matrix {

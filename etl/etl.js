@@ -1,7 +1,7 @@
 export const transform = (scores) => {
   let newScores = {};
-  Object.keys(scores).forEach(point => {
-    scores[point].forEach(alphabet => {
+  Object.entries(scores).forEach(([point, alphabets]) => {
+    alphabets.forEach(alphabet => {
       newScores[alphabet.toLowerCase()] = Number(point);
     });
   });
